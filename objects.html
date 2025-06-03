@@ -6,10 +6,14 @@
 <body>
 
   <script>
+
+    /*
     const product = {
       name: 'socks',
       price: 1090
     };
+
+    console.log(typeof product);
     console.log(product);
     console.log(product.name);
     console.log(product.price);
@@ -22,6 +26,91 @@
 
     delete product.newProperty;
     console.log(product);
+    */
+    
+    /*
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': '1 day',
+      rating: {
+        stars: 4.5,
+        count: 87
+      },
+      fun: function function1() {
+        console.log('function inside object')
+      }
+    };
+
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+
+    console.log(product2.rating.count);
+    product2.fun(); // quando a uma função dentro de um objeto ela é chamada de: *Method*
+
+    // o mesmo vale para certos objetos da propria linguagem js (Built-in Objects) como:
+    console.log(typeof console); // console é um objeto (Built-in Object)
+    console.log(typeof console.log); // log é uma função dentro dele, logo é um *Method*
+    console.log(typeof Math); // outro exemplo de objeto da propria linguagem
+    console.log(typeof Math.random); // e outro *Method*
+
+    // convertendo de js object para JSON (JavaScript Object Notation)
+    console.log(JSON.stringify(product2)); // não suporta '' apenas "" e não suporta funções
+    const jsonString = JSON.stringify(product2);
+
+
+    // convertendo de JSON para js object
+    console.log(JSON.parse(jsonString));
+    */
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = { //objetos são referencias dos locais que estão salvos na memoria.
+      message: 'hello'
+    };
+
+    const object2 = object1; // dessa maneira a linguagem é mais eficiente e não precisa copiar o conteudo diversas vezes
+
+    object1.message = 'Good job!';
+    console.log(object1);
+    console.log(object2);
+
+    const object3 = {
+      message: 'Good job!'
+    };
+
+    console.log(object3 === object1); // o resultado sera false pq esta sendo comparado a referencia na memoria e não o conteudo de cada objeto
+
+    console.log(object2 === object1); // já aqui dera true pois tem a mesma referencia do local na memoria
+
+    const object4 = {
+      message: 'Good job!',
+      price: 799
+    };
+
+    // const message = object4.message;
+    // abaixo o modo mais curto e usual de gravar um atributo de um objeto dentro de uma variavel
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      // message: message
+      message,
+      /*
+      method: function function1 () {
+        console.log('method');
+      } O código abaixo faz o mesmo que esse código porem de maneira mais curta
+      */
+      method() {
+        console.log('method');
+      }
+    };
+
+    console.log(object5);
+    object5.method();
 
   </script>
 </body>
