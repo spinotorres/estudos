@@ -7,11 +7,22 @@
   </head>
   <body>
     <p>YouTube Subscribe Button</p>
-    <button class="yt-button" onclick="">Subscribe</button>
+    <button class="yt_button" onclick="
+      changeButton()
+    ">Subscribe</button>
 
 
     <script>
-      
+      function changeButton() {
+        const button = document.querySelector(".yt_button");
+        if (button.innerHTML === 'Subscribe') {
+          button
+            .innerHTML = 'Subscribed';
+        } else if (button.innerHTML === 'Subscribed') {
+          button
+            .innerHTML = 'Subscribe';
+        }
+      }
     </script>
   </body>
 </html>
