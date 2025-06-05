@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+  </head>
+  <body>
+    
+    <button>Hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      // document é um objeto da Built in da linguagem js onde podemos acessar propriedades da página web e mudar seus elementos, como no exemplo abaixo.
+
+      /*
+      document.body.innerHTML = 'hello';
+      document.title = 'Good Job!';
+      */
+
+      /*
+      console.log(document.title);
+      document.title = 'changed';
+
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = '<button>Good job!</button>';
+      */
+
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      // para selecionar elementos especificos deve ser utilizado denotação por classe
+      document.querySelector('.js-button')
+        .innerHTML = 'Good Job!';
+
+      // comprovando isso armazenando o caminho do objeto em uma constante
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      
+    </script>
+  </body>
+</html>
