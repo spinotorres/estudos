@@ -20,7 +20,13 @@
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE shipping.</p>
-    <input class="js-cost-input" placeholder="Cost of order">
+
+    <input  class="js-cost-input" 
+            placeholder="Cost of order"
+            onkeydown="
+              handleCostKeydown(event)
+            ">
+
     <button onclick="
       CalculateTotal()
     ">Calculate</button>
@@ -28,24 +34,30 @@
 
     <script>
 
+      function handleCostKeydown(event) {
+        if  (event.key === 'Enter') {
+          CalculateTotal();
+        }
+      }
+
       function CalculateTotal() {
 
         const inputElement = document.querySelector('.js-cost-input');
-        inputElement.value 
 
-        let orderCost = 0;
-        let totalCost = 0;
+        let cost = Number(inputElement.value);
+        console.log(cost);
 
-        if (orderCost < 40) {
-          totalCost = orderCost + 10;
-        } else if (orderCost > 40) {
-          totalCost = orderCost;
+        if (cost < 40) {
+          cost = cost + 10;
+        } else if (cost > 40) {
+          cost = cost;
         }
 
-        document.querySelector('.js-showTotal').innerHTML = totalCost;
-      }
+        document.querySelector('.js-showTotal')
+          .innerHTML = `$${cost}`;
 
-      document.querySelector('.js-showTotal').innerHTML = totalCost;
+        console.log(cost);
+      }
 
       function changeButton() {
         const buttonElement = document.querySelector(".subscribe_button");
